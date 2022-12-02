@@ -60,22 +60,26 @@
         </ul>
       ';}
        ?>
-            <?php
-            if(isset($_SESSION['login_id'])){
-              $uname=$_SESSION['username'];
-              $picturepath=$_SESSION['pic_path'];
-              print'<li class="nav-item dropdown navbar-nav">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">';
-                print '<span class="username">';print $uname;print'</span>';
-                print '<span><img src="';print $picturepath; print '" alt="" width="35" height="35" aria-hidden="true" style=" border-radius: 50%; margin-left: 6px"></span>';
-                print' </a>
-                  <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Account</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="index.php?oldal=logout">Logout</a></li>
-                  </ul>
-                  </li>
-                  ';}
+       <?php
+       if(isset($_SESSION['login_id'])){
+         $uname=$_SESSION['username'];
+         $picturepath=$_SESSION['pic_path'];
+         $login_jog=$_SESSION['login_jog'];
+         $oldalneve=$_GET['oldal'];
+         print'<li class="nav-item dropdown navbar-nav">
+         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">';
+           print '<span class="username">';print $uname;print'</span>';
+           print '<span><img src="';print $picturepath; print '" alt="" width="35" height="35" aria-hidden="true" style=" border-radius: 50%; margin-left: 6px"></span>';
+           print' </a>
+             <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="#">Account</a></li>';
+             if($login_jog > 5) print' <li><a class="dropdown-item" href="';print'../index.php?oldal=';print $oldalneve ;print'">Normál felület</a></li>'; 
+             print '
+             <li><hr class="dropdown-divider"></li>
+             <li><a class="dropdown-item" href="index.php?oldal=logout">Logout</a></li>
+             </ul>
+             </li>
+             ';}
               ?>
         </div>
       </nav>

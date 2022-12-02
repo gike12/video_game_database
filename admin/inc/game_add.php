@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['reg'])) {
+if (isset($_POST['hozzaad'])) {
 
     $email = $_POST['email'];
     $pwd = $_POST['pwd'];
@@ -37,8 +37,7 @@ if (isset($_POST['reg'])) {
     //urlap
 ?>
 <div class="page-heading">
-    <h1>Regisztráció</h1>
-    <!--<span class="subheading">Add meg az adataidat vagy <a href="index.php?oldal=reg">regisztrálj!</a></span>-->
+    <h1>Játék adatbázishoz adása</h1>
 </div>
 </div>
 </div>
@@ -50,31 +49,16 @@ if (isset($_POST['reg'])) {
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <div class="my-5">
-                    <form id="contactForm" action="index.php?oldal=reg" method="POST">
-                        <!--data-sb-form-api-token="API_TOKEN"-->
+                    <form id="contactForm" action="index.php?oldal=game_add" method="POST">
+
                         <div class="form-floating">
                             <input class="form-control" id="username" name="username" type="text" placeholder="Username"
                                 data-sb-validations="required" />
                             <label for="name">Username</label>
-                        </div>
-                        <div class="form-floating">
-                            <input class="form-control" id="email" name="email" type="text" placeholder="E-mail"
-                                data-sb-validations="required" />
-                            <label for="name">Email</label>
-                        </div>
-                        <div class="form-floating">
-                            <input class="form-control" id="pwd" name="pwd" type="password" placeholder="password"
-                                data-sb-validations="required" />
-                            <label for="name">Jelszó</label>
-                        </div>
-                        <div class="form-floating">
-                            <input class="form-control" id="pwd2" name="pwd2" type="password" placeholder="password"
-                                data-sb-validations="required" />
-                            <label for="name">Jelszó újra</label>
-                        </div>
+                       
 
 
-                        <input class="btn btn-primary text-uppercase centers" type="submit" name="reg" value="Regisztráció">
+                        <input class="btn btn-primary text-uppercase centers" type="submit" name="hozzaad" value="Hozzáad">
 
                     </form>
                 </div>

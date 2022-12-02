@@ -55,21 +55,25 @@
         </div>
         </div>
         ';
-      }?>
-      <div class="gamecontainer">
-      <div class="card" style="width: 14rem;">
+      }
 
-        <a href="index.php?oldal=game_add"><img src="assets\images\pictures\add.png" alt="Plus icon" style="max-height: 206px;"></a>
-
-        <div class="card-body">
-          <a href="index.php?oldal=game_add"><h5 class="card-title" style="text-align: center;">Add Game</h5></a>
-            <p class="card-text"></p>
-    </div>
+        print ' <div class="gamecontainer">
+        <div class="card" style="width: 14rem;">
+  
+          <a href="index.php?oldal=game_add"><img src="assets\images\pictures\add.png" alt="Plus icon" style="max-height: 206px;"></a>
+  
+          <div class="card-body">
+            <a href="index.php?oldal=game_add"><h5 class="card-title" style="text-align: center;">Add Game</h5></a>
+              <p class="card-text"></p>
       </div>
         </div>
-        <?php
+          </div>';
+      
+      ?>
+     
+  
+<?php
      print '</div>';
      }
-     
-    ?>
     
+?>

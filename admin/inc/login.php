@@ -21,7 +21,9 @@
 
                      mysqli_query($con,"UPDATE users SET user_last_sign_in=now() WHERE id='$row[id]'");
                      $_SESSION['login_id'] = $row['id'];
-                     $_SESSION['login_jog'] =mysqli_query($con,"SELECT * FROM rights WHERE id='$row[user_rights_id]'");
+                     $rightrow=mysqli_fetch_assoc(mysqli_query($con,"SELECT rights_level FROM rights WHERE id='$row[user_rights_id]'"));
+                     $_SESSION['login_jog'] = $rightrow['rights_level'];
+                     $_SESSION['username'] = $row['user_name'];
                      $_SESSION['username'] = $row['user_name'];
                      $result1=mysqli_query($con,"SELECT * FROM pictures WHERE id='$row[user_profile_picture_id]'");
                      $row2=mysqli_fetch_assoc($result1);
