@@ -1,0 +1,71 @@
+header.masthead {
+    padding-top: 12.5rem;
+    padding-bottom: 12.5rem;
+}
+header.masthead {
+    position: relative;
+    margin-bottom: 4rem;
+    padding-top: calc(10rem + 57px);
+    padding-bottom: 8rem;
+    background: no-repeat center center;
+    background-color: #00ffff;
+    background-size: cover;
+    background-attachment: scroll;
+    color: rgb(255, 247, 0)
+}
+.site-heading{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+.bg-color{
+  background-color: rgba(0, 255, 136, 0.443);
+}
+h1{
+  text-align: center;
+}
+.centers{
+  display: table;
+  margin: 0 auto;
+}
+.dropdown-menu {
+   min-width:70px;
+   text-align: left;
+}
+.notcurrent:hover{color: yellow}
+.notcurrent{color: orange}
+.dropdown-toggle::after{
+  margin-left: 0.7em;
+  margin: 0
+}
+
+.flex_game_about_conainer{
+  display: flex;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 70px;
+  margin-bottom: 80px;
+}
+
+img.game_img_size{
+  max-width: 70%;
+  width: auto\9; /* ie8 */
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+div.gamecontainer{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+div.gamelistdiv{
+  display: flex;
+  
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content:flex-start;
+}
+img.card-img-top{
+  max-height: 290px;
+  min-height: 290px;
+}
