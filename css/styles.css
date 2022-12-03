@@ -68,3 +68,8 @@ img.card-img-top{
   max-height: 290px;
   min-height: 290px;
 }
+.rating{
+  display:table;
+  padding: 10px;
+  margin: 0 auto;
+}

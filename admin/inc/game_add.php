@@ -25,13 +25,18 @@ if (isset($_POST['hozzaad'])) {
             if($fileSize <= 5_000_000){
                 $fileNameNew = uniqid('',true).".".$fileActualExt;
                 $fileDestination = '../assets/images/pictures/'.$fileNameNew;
-                move_uploaded_file($fileTmpName,$fileDestination);
                 $fileDestination2='assets/images/pictures/'.$fileNameNew;
-                if(!ctype_space($game_name) and !ctype_space($game_genre) and !ctype_space($game_relase_date) and !ctype_space($game_platforms) and !ctype_space($game_about)){
+                if(!strlen(trim($game_name)) == 0 and !strlen(trim($game_genre)) == 0 
+                                                  and !strlen(trim($game_relase_date)) == 0
+                                                  and !strlen(trim($game_platforms)) == 0 
+                                                  and !strlen(trim($game_developers)) == 0 
+                                                  and !strlen(trim($game_gamemodes)) == 0 
+                                                  and !strlen(trim($game_about)) == 0){
                     mysqli_query($con,"INSERT INTO pictures VALUES ('','$_SESSION[login_id]','$fileNameNew','$fileDestination2','game_pic')");
                     $result = mysqli_query($con,"SELECT * FROM pictures WHERE picture_name='$fileNameNew'");
                     $row = mysqli_fetch_assoc($result);
                     mysqli_query($con,"INSERT INTO games VALUES ('','$game_name','$game_genre','$row[id]','$game_relase_date','$game_platforms','$game_developers','$game_gamemodes','$game_about','')");
+                    move_uploaded_file($fileTmpName,$fileDestination);
                     echo "<h1> Játék adatbázisba töltve! </h1>";
 
                 } else {echo "<h1> Nem töltötted ki valamelyik beviteli mezőt! </h1>"; return false;}
