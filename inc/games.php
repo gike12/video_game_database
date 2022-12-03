@@ -109,7 +109,7 @@ print '
       print '</div>';
       }
       else{
-      print'<h1>Game List</h1>
+      print'<h1>All Games List</h1>
       <div class="gamelistdiv">';
       $result2 = mysqli_query($con,"SELECT * FROM games");
       while($row2=mysqli_fetch_assoc($result2)){

@@ -24,7 +24,7 @@ if(isset($_GET['game_id'])){
       <h1>';print $game_row['game_name']; print'</h1> 
       
 
-      <img class="game_img_size" src=';print $gamepicture["picture_path"];print '></img>';
+      <img class="game_img_size" src=';print"../"; print $gamepicture["picture_path"];print '></img>';
       if(isset($_SESSION['login_id'])){
         $result_rating=mysqli_query($con,"SELECT rating FROM game_ratings WHERE user_id='$_SESSION[login_id]' AND game_id='$_GET[game_id]'");
         $row_rating=mysqli_fetch_assoc($result_rating);
@@ -75,38 +75,7 @@ print '
 ';
 }
      else{
-      if(isset($_GET['search'])){
-        print'<h1>Search results</h1>
-      <div class="gamelistdiv">';
-      $result2 = mysqli_query($con,"SELECT * FROM games WHERE game_name LIKE '%$_GET[search]%'");
-      if( mysqli_num_rows($result2) == 0) print '
-      <div class="gamecontainer">
-      <div class="card" style="width: 14rem;">
-        <div class="card-body">
-          <h5 class="card-title" style="text-align: center;">Az ön álltal keresett kifejezés nem található.</h5></a>
-            <p class="card-text"></p></div></div></div>';
-
-      while($row2=mysqli_fetch_assoc($result2) and mysqli_num_rows($result2) != 0){
-        
-        $g_img = mysqli_query($con,"SELECT * FROM pictures WHERE id='$row2[game_picture_id]'");
-        $g_row = mysqli_fetch_assoc($g_img);
-        print '
-        
-          <div class="gamecontainer">
-            <div class="card" style="width: 14rem;">
-            <a href="index.php?oldal=games&game_id=';print $row2["id"] ;print '"><img class="card-img-top" src=';print $g_row["picture_path"];print ' alt="Card image cap" >
-          <div class="card-body">
-            <a href="index.php?oldal=games&game_id=';print $row2["id"] ;print '"><h5 class="card-title" style="text-align: center;">';print $row2["game_name"];print '</h5></a>
-            <p class="card-text">Relase date: <br> ';print $row2["game_relase_date"];print '<br>Rating: ';print $row2["game_rating"];print '/10 <br>';print $row2["game_platforms"];print ' </p>
-            <p class="card-text"></p>
-          </div>
-        </div>
-        </div>
-        ';
-      }
-      print '</div>';
-      }
-      else{
+    
       print'<h1>Upcoming Games List</h1>
       <div class="gamelistdiv">';
       $today_date=date("Y-m-d");
@@ -119,7 +88,7 @@ print '
         
           <div class="gamecontainer">
             <div class="card" style="width: 14rem;">
-            <a href="index.php?oldal=games&game_id=';print $row2["id"] ;print '"><img class="card-img-top" src=';print $g_row["picture_path"];print ' alt="Card image cap" >
+            <a href="index.php?oldal=games&game_id=';print $row2["id"] ;print '"><img class="card-img-top" src=';print"../";print $g_row["picture_path"];print ' alt="Card image cap" >
           <div class="card-body">
             <a href="index.php?oldal=games&game_id=';print $row2["id"] ;print '"><h5 class="card-title" style="text-align: center;">';print $row2["game_name"];print '</h5></a>
             <p class="card-text">Relase date: <br> ';print $row2["game_relase_date"];print '<br>Rating: ';print $row2["game_rating"];print '/10 <br>';print $row2["game_platforms"];print ' </p>
@@ -128,7 +97,7 @@ print '
         </div>
         </div>
         ';
-      }
+      
       print '</div>';
      }}
 
