@@ -40,8 +40,7 @@
                   </li>
             </ul>
             <form class="d-flex" role="search">
-              
-              <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control me-1" placeholder="Search" aria-label="Search" name="keywords">
               <button class="btn btn-outline-success m-2" type="submit">Search</button>
             </form>
             <?php
@@ -87,9 +86,14 @@
         </div>
     </header>
     <div>
+      
       <?php
+      if(isset($_GET['keywords'])){
+        ugras('index.php?oldal=games&search='.$_GET['keywords'],1);
+      }
       include($tartalom)
       ?>
+      
     </div>
    
 
