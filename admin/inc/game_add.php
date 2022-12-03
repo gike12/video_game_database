@@ -1,38 +1,47 @@
 <?php
 if (isset($_POST['hozzaad'])) {
+    $game_name=$_POST['game_name'];
+    $game_genre=$_POST['game_genre'];
+    $game_relase_date=$_POST['game_relase_date'];
+    $game_platforms=$_POST['game_platforms'];
+    $game_developers=$_POST['game_developers'];;
+    $game_gamemodes=$_POST['game_gamemodes'];;
+    $game_about=str_replace("'",'`',$_POST['game_about']);
 
-    $email = $_POST['email'];
-    $pwd = $_POST['pwd'];
-    $pwd2 = $_POST['pwd2'];
-    $username = $_POST['username'];
-    $result = mysqli_query($con, "SELECT * FROM users WHERE user_email='$email'");
-    $result2 = mysqli_query($con, "SELECT * FROM users WHERE user_name='$username'");
-    if (mysqli_num_rows($result) == 1 & mysqli_num_rows($result2) == 1) {
-        print("<h1>A megadott e-mail cím és felhasználónév már használatban van.</h1>");
-        ugras("index.php?oldal=reg", 2000);
-        return false;
-    } 
-    if(mysqli_num_rows($result) == 1){
-        print("<h1>A megadott e-mail cím már használatban van.</h1>");
-        ugras("index.php?oldal=reg", 2000);
-        return false;
-    }
-    if(mysqli_num_rows($result2) == 1){
-        print("<h1>A megadott felhasználónév már használatban van.</h1>");
-        ugras("index.php?oldal=reg", 2000);
-        return false;
-    }
+    $file=$_FILES['file'];
+    $fileName=$_FILES['file']['name'];
+    $fileTmpName=$_FILES['file']['tmp_name'];
+    $fileSize=$_FILES['file']['size'];
+    $fileError=$_FILES['file']['error'];
+    $fileType=$_FILES['file']['type'];
 
-    if ($pwd == $pwd2) {
+    $fileExt = explode('.', $fileName);
+    $fileActualExt = strtolower(end($fileExt));
+    
+    $allowed = array('jpg','jpeg','png');
+
+    if(in_array($fileActualExt, $allowed)){
+        if ($fileError === 0){
+            if($fileSize <= 5_000_000){
+                $fileNameNew = uniqid('',true).".".$fileActualExt;
+                $fileDestination = '../assets/images/pictures/'.$fileNameNew;
+                move_uploaded_file($fileTmpName,$fileDestination);
+                $fileDestination2='assets/images/pictures/'.$fileNameNew;
+                if(!ctype_space($game_name) and !ctype_space($game_genre) and !ctype_space($game_relase_date) and !ctype_space($game_platforms) and !ctype_space($game_about)){
+                    mysqli_query($con,"INSERT INTO pictures VALUES ('','$_SESSION[login_id]','$fileNameNew','$fileDestination2','game_pic')");
+                    $result = mysqli_query($con,"SELECT * FROM pictures WHERE picture_name='$fileNameNew'");
+                    $row = mysqli_fetch_assoc($result);
+                    mysqli_query($con,"INSERT INTO games VALUES ('','$game_name','$game_genre','$row[id]','$game_relase_date','$game_platforms','$game_developers','$game_gamemodes','$game_about','')");
+                    echo "<h1> Játék adatbázisba töltve! </h1>";
+
+                } else {echo "<h1> Nem töltötted ki valamelyik beviteli mezőt! </h1>"; return false;}
+            } else{echo "<h1>Túl nagy fileméret! (5Mb max) </h1>"; return false;}
+        } else {echo "<h1> Hiba történt a file feltöltése közben! </h1>"; return false;}
+    } else {echo "<h1> Nem tölthetsz fel ilyen file-formátumot! </h1>"; return false;}
+   
 
 
-        print "<h1>Sikeres regisztráció.</h1>";
-        mysqli_query($con, "INSERT INTO users VALUES ('','$email','$username','$pwd','0','0','',now(),now())");
-        ugras("index.php?oldal=login", 2000);
-    } else {
-        print "<h1>A megadott két jelszó nem egyezik.</h1>";
-        ugras("index.php?oldal=reg", 2000);
-    }
+   
 } else {
     //urlap
 ?>
@@ -49,14 +58,46 @@ if (isset($_POST['hozzaad'])) {
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <div class="my-5">
-                    <form id="contactForm" action="index.php?oldal=game_add" method="POST">
+                    <form id="contactForm" action="index.php?oldal=game_add" method="POST" enctype="multipart/form-data">
 
                         <div class="form-floating">
-                            <input class="form-control" id="username" name="username" type="text" placeholder="Username"
+                            <input class="form-control" id="game_name" name="game_name" type="text" placeholder="Game_name"
                                 data-sb-validations="required" />
-                            <label for="name">Username</label>
-                       
+                            <label for="name">Játék neve</label>
 
+                        <div class="form-floating">
+                            <input class="form-control" id="game_genre" name="game_genre" type="text" placeholder="Game_genre"
+                                data-sb-validations="required" />
+                            <label for="name">Játék műfaj</label>
+                       
+                        <div class="form-floating">
+                            <input class="form-control" id="game_relase_date" name="game_relase_date" type="date" placeholder="Game_relase_date"
+                                data-sb-validations="required" />
+                            <label for="name">Játék kiadásának ideje</label>
+
+                        <div class="form-floating">
+                            <input class="form-control" id="game_platforms" name="game_platforms" type="text" placeholder="Game_platforms"
+                                data-sb-validations="required" />
+                            <label for="name">Játék platformjai</label>
+                         <div class="form-floating">
+                            <input class="form-control" id="game_developers" name="game_developers" type="text" placeholder="Game_developers"
+                                data-sb-validations="required" />
+                            <label for="name">Játék fejlesztői</label>
+                         <div class="form-floating">
+                            <input class="form-control" id="game_gamemodes" name="game_gamemodes" type="text" placeholder="Game_gamemodes"
+                                data-sb-validations="required" />
+                            <label for="name">Játék játékmódjai</label>
+
+                        <div class="form-floating">
+                            <textarea class="form-control" id="game_about" name="game_about" type="text" placeholder="Game_about"
+                                data-sb-validations="required" style="height: 300px; resize: none;"></textarea>
+                            <label for="name">A játékról</label>
+                            
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Indexkép</label>
+                                <input class="form-control" type="file" id="game_picture" name="file" type="file" placeholder="Pame_picture"
+                                data-sb-validations="required">
+                            </div>
 
                         <input class="btn btn-primary text-uppercase centers" type="submit" name="hozzaad" value="Hozzáad">
 

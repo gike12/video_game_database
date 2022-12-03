@@ -10,7 +10,7 @@
       <h1>';print $game_row['game_name']; print'</h1> 
       
 
-      <img class="game_img_size" src=';print $gamepicture["picture_path"];print '></img>
+      <img class="game_img_size" src=';print'..\\'; print $gamepicture["picture_path"];print '></img>
 
       <form id="contactForm" action="index.php?oldal=games&game_id=';print $_GET['game_id'];print '" method="POST">';?>
       
@@ -46,7 +46,7 @@
         
           <div class="gamecontainer">
             <div class="card" style="width: 14rem;">
-            <a href="index.php?oldal=games&game_id=';print $row2["id"] ;print '"><img class="card-img-top" src=';print $g_row["picture_path"];print ' alt="Card image cap" >
+            <a href="index.php?oldal=games&game_id=';print $row2["id"] ;print '"><img class="card-img-top" src=';print '..\\'; print $g_row["picture_path"];print ' alt="Card image cap" >
           <div class="card-body">
             <a href="index.php?oldal=games&game_id=';print $row2["id"] ;print '"><h5 class="card-title" style="text-align: center;">';print $row2["game_name"];print '</h5></a>
             <p class="card-text">Relase date: <br> ';print $row2["game_relase_date"];print '<br>Rating: ';print $row2["game_rating"];print '/10 <br>';print $row2["game_platforms"];print ' </p>
@@ -60,7 +60,7 @@
         print ' <div class="gamecontainer">
         <div class="card" style="width: 14rem;">
   
-          <a href="index.php?oldal=game_add"><img src="assets\images\pictures\add.png" alt="Plus icon" style="max-height: 206px;"></a>
+          <a href="index.php?oldal=game_add"><img src="..\assets\images\pictures\add.png" alt="Plus icon" style="max-height: 206px;"></a>
   
           <div class="card-body">
             <a href="index.php?oldal=game_add"><h5 class="card-title" style="text-align: center;">Add Game</h5></a>
