@@ -9,7 +9,8 @@
 - **Members**
   - List out all members(last online, number of comments/ratings) 
 - **Games**
-  - List of ALL games in the database (Per instance) Name,Genre,About,Relase Date,Platforms,Develolopers,Gamemodes 
+  - List of ALL games in the database 
+  - (Per instance) Name,Genre,About,Relase Date,Platforms,Develolopers,Gamemodes 
 - **Upcoming**
   - All upcoming games  											
 - **Home**
