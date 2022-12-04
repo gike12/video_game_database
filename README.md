@@ -42,7 +42,7 @@
 - [ ] Reply to comments under games
 - [ ] Make games editable within the admin interface
 - [ ] Account interface to change profile picture
-- [ ] Edit, add or delete rights in the admin interface
+- [x] Edit, add or delete rights in the admin interface
 - [x] List upcoming games under a separate page
 - [ ] Home page look
 - [ ] Forum look
