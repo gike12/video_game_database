@@ -12,23 +12,23 @@
 - **forum**           / Categories in category's and topic in category (comments in topics, reply on comment's)  
 ## Todo list
 
--[ ] Database is fully controllable from web interface
--[x] Functionable search bar to search games in database
--[x] Members list
--[x] Members list admin interface
--[ ] Members list last online and number of comments and ratings
--[x] List all games from database in a styled web interface
--[x] Game ratings to each game
--[ ] Comment section under eatch game
--[ ] Reply to comments under games
--[ ] Account interface to change profile picture
--[x] List upcoming games under a separate page
--[ ] Home page look
--[ ] Forum look
--[ ] Forum Categories
--[ ] Forum Threads
--[ ] Reply to forum threads and reply to reply
--[ ] Website is fully functional
+- [ ] Database is fully controllable from web interface
+- [x] Functionable search bar to search games in database
+- [x] Members list
+- [x] Members list admin interface
+- [ ] Members list last online and number of comments and ratings
+- [x] List all games from database in a styled web interface
+- [x] Game ratings to each game
+- [ ] Comment section under eatch game
+- [ ] Reply to comments under games
+- [ ] Account interface to change profile picture
+- [x] List upcoming games under a separate page
+- [ ] Home page look
+- [ ] Forum look
+- [ ] Forum Categories
+- [ ] Forum Threads
+- [ ] Reply to forum threads and reply to reply
+- [ ] Website is fully functional
 
 
 ## DATABASE
