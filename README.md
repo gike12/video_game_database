@@ -2,14 +2,31 @@
 > This is only a school assginment that i saving and montioring in this repo.
 
 ## The basic look concept
-- **Admin interface** / Controll and edit all surface.
-- **Search**          / Search games from database 
-- **Members**         / List out all members, (last online, number of comments/ratings) 
-- **Games**           / List of ALL games in the database (Per instance) Name,Genre,About,Relase Date,Platforms,Develolopers,Gamemodes 
-- **Upcoming**        / All upcoming games  											
-- **Home**            / Latest relased games(2-4),Latest upcoming games(2~4),Top posts from forum(2-4) 
-- **Account**         / Profile pic, Name, Creation Date, Rights, Number of Comments, Number of Ratings | sign in or login
-- **forum**           / Categories in category's and topic in category (comments in topics, reply on comment's)  
+- **Admin interface**
+  - Controll and edit all surface.
+- **Search**
+  - Search games from database 
+- **Members**
+  - List out all members(last online, number of comments/ratings) 
+- **Games**
+  - List of ALL games in the database (Per instance) Name,Genre,About,Relase Date,Platforms,Develolopers,Gamemodes 
+- **Upcoming**
+  - All upcoming games  											
+- **Home**
+  - Latest relased games(2-4)
+  - Latest upcoming games(2-4)
+  - Top posts from forum(2-4) 
+- **Account**
+  - Profile pic
+  - Name
+  - Creation Date
+  - Rights
+  - Number of Comments
+  - Number of Ratings
+- **Forum**
+  - Categories in category's and topic in category
+  - comments in topics
+  - reply on comment's  
 ## Todo list
 
 - [ ] Database is fully controllable from web interface
