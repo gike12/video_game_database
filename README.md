@@ -7,7 +7,7 @@
 - **Members**         / List out all members, (last online, number of comments/ratings) 
 - **Games**           / List of ALL games in the database (Per instance) Name,Genre,About,Relase Date,Platforms,Develolopers,Gamemodes 
 - **Upcoming**        / All upcoming games  											
-- **Home**            / Latest relased games(2~4),Latest upcoming games(2~4),Top posts from forum(2~4) 
+- **Home**            / Latest relased games(2-4),Latest upcoming games(2~4),Top posts from forum(2-4) 
 - **Account**         / Profile pic, Name, Creation Date, Rights, Number of Comments, Number of Ratings | sign in or login
 - **forum**           / Categories in category's and topic in category (comments in topics, reply on comment's)  
 ## Todo list
