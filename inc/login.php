@@ -22,6 +22,7 @@
         }
         else {
             print "<h1>Hibás email vagy jelszó.</h1>";
+            ugras("index.php?oldal=login",1000);
         }
     }
     else {
