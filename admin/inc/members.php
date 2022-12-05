@@ -66,6 +66,7 @@ if(isset($_GET['action'])){
                 } else {echo "<h1> Nem tölthetsz fel ilyen file-formátumot! </h1>"; return false;}
             } 
              else mysqli_query($con, "UPDATE users SET user_name='$username',user_email='$email',user_pwd='$pwd',user_rights_id='$jog_id' WHERE id='$id'");
+                        $_SESSION['pic_path']=$fileDestination2;
                             print "<h1>Sikeres módosítás.</h1>";
                 
                         ugras("index.php?oldal=members", 2000);

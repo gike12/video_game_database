@@ -52,10 +52,10 @@
               print'<li class="nav-item dropdown navbar-nav">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">';
                 print '<span class="username">';print $uname;print'</span>';
-                print '<span><img src="';print $picturepath; print '" alt="" width="35" height="35" aria-hidden="true" style=" border-radius: 50%; margin-left: 6px"></span>';
+                print '<span><img src="';print $picturepath; print '" alt="" width="35" height="35" aria-hidden="true" style=" border-radius: 50%; margin-left: 15px"></span>';
                 print' </a>
-                  <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Account</a></li>';
+                  <ul class="dropdown-menu" style="margin-left: -50px;">
+                  <li><a class="dropdown-item" href="index.php?oldal=account_change">Account details</a></li>';
                   if($login_jog > 5){print'
                   <li><a class="dropdown-item" href="';print'admin/index.php?oldal=';print $oldalneve ;print'">Admin felület</a></li>
                   ';}
