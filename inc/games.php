@@ -98,18 +98,33 @@ if(isset($_SESSION['login_id'])) print '
 </div>
 </form>';
 $comments_result=mysqli_query($con,"SELECT * FROM comments WHERE comment_game_id='$_GET[game_id]'");
-$comments_row=mysqli_fetch_array($comments_result);
-$number_of_comments=mysqli_num_rows($comments_result);
-$comment_sender_name_row=mysqli_fetch_array(mysqli_query($con,"SELECT * FROM users WHERE id='$comments_row[comment_author]'"));
+$number_of_comments=0;
+if(!mysqli_num_rows($comments_result) == 0){
+  $number_of_comments=mysqli_num_rows($comments_result);
+
 print '<h5>Kommentek száma: '.$number_of_comments;'</h5>';
 while($comment_load_row=mysqli_fetch_array($comments_result)){
+  $comment_sender_row=mysqli_fetch_array(mysqli_query($con,"SELECT * FROM users WHERE id='$comment_load_row[comment_author]'"));
+  $user_img_row=mysqli_fetch_array(mysqli_query($con,"SELECT * FROM pictures WHERE id='$comment_sender_row[user_profile_picture_id]'"));
   print' 
-  <div class="comment_box">
-  <p>'.$comment_sender_name_row['user_name'].'</p>
+<div class="commentbox_container" style="box-sizing: border-box;font-size: 14px;background: orange; width: min-content; border-style: outset ;" >
+<div class="comment_section">
+<div class="post_comment">
+  <div class="list">
+    <div class="user">
+      <div class="user_img"><img src="'.$user_img_row['picture_path'].'" alt="profile_picture"></div>
+      <div class="user_meta">
+      <div class="name">'.$comment_sender_row['user_name'].'</div>
+      <div class="date">'.$comment_load_row['comment_creation_date'].'</div>
+      </div>
+    </div>
   </div>
-  <div>
-  <p>'.$comment_load_row['comment_text'].'</p>
-  </div>';
+  <div class="comment_post">'.$comment_load_row['comment_text'].'</div>
+</div>
+</div>
+</div>
+';
+}
 }
 }
 #endregion
