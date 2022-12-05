@@ -1,10 +1,17 @@
 <?php 
       $result = mysqli_query($con,"SELECT * FROM games");
       $row = mysqli_fetch_assoc($result);
+#region clicked one of the gamecards
 if(isset($_GET['game_id'])){
       $game_result=mysqli_query($con,"SELECT * FROM games WHERE id=$_GET[game_id]");
       $game_row=mysqli_fetch_assoc($game_result);
       $gamepicture= mysqli_fetch_assoc(mysqli_query($con,"SELECT * FROM pictures WHERE id='$game_row[game_picture_id]'"));
+      if(isset($_POST['comment_kuld'])){
+        if(!empty(trim($_POST['comment_text']))){
+          $gameid=$_POST['game_id'];
+          $comment_text=$_POST['comment_text'];
+          $comment_author=$_SESSION['login_id'];
+          mysqli_query($con,"INSERT INTO comments VALUES ('','$comment_text','$comment_author','0',now(),now(),'0','$gameid','0')");}}
       if(isset($_POST['rating'])){
         $ratingvalue=$_POST['rating'];
         $result_rating=mysqli_query($con,"SELECT rating FROM game_ratings WHERE user_id='$_SESSION[login_id]' AND game_id='$_GET[game_id]'");
@@ -25,12 +32,14 @@ if(isset($_GET['game_id'])){
       
 
       <img class="game_img_size" src=';print $gamepicture["picture_path"];print '></img>';
+    #region Rating1-10 if user logged in 
+     
       if(isset($_SESSION['login_id'])){
         $result_rating=mysqli_query($con,"SELECT rating FROM game_ratings WHERE user_id='$_SESSION[login_id]' AND game_id='$_GET[game_id]'");
         $row_rating=mysqli_fetch_assoc($result_rating);
         if(isset($row_rating['rating'])) $rowrating=$row_rating['rating']; else $rowrating=0;
   print '
-}
+} 
       <form id="contactForm" action="index.php?oldal=games&game_id=';print $_GET['game_id'];print '" method="POST">
       <h3 class="centers">Rate the game:</h3>
       <div class="rating">
@@ -55,8 +64,9 @@ if(isset($_GET['game_id'])){
         <input id="rating10" type="radio" name="rating" value="10" onclick="this.form.submit();"'; if(mysqli_num_rows($result_rating) == 1 and $rowrating == 10){ print 'checked';} print '>
         <label for="rating10" class="m-1">10</label>
       </div>
-      </form>';
+      </form>';   
 }
+#endregion
 print '
 <div class="flex_game_about_conainer">
       
@@ -71,10 +81,40 @@ print '
       <div class="game_rating"></div>
    <h1>About</h1>
   <div class="text_content"> <p>';print $game_row["game_about"];print ' </p> </div> 
-</div>    
-';
+
+<div class="comment_main">
+<h1>Megjegyzések</h1>';
+
+
+
+
+if(isset($_SESSION['login_id'])) print '
+<form id="contactForm" action="index.php?oldal=games&game_id='.$_GET['game_id'].'" method="POST">
+<div class="form-floating">
+        <input name="game_id" hidden value="'.$_GET['game_id'].'" />
+        <textarea class="form-control" id="comment_text" name="comment_text" type="text" placeholder="Comment_text" style="height: 120px; resize: none; margin-bottom:5px;"></textarea>
+        <label for="name">Írj megjegyzést...</label>
+<input class="btn btn-primary text-uppercase" type="submit" name="comment_kuld" value="Küldés">
+</div>
+</form>';
+$comments_result=mysqli_query($con,"SELECT * FROM comments WHERE comment_game_id='$_GET[game_id]'");
+$comments_row=mysqli_fetch_array($comments_result);
+$number_of_comments=mysqli_num_rows($comments_result);
+$comment_sender_name_row=mysqli_fetch_array(mysqli_query($con,"SELECT * FROM users WHERE id='$comments_row[comment_author]'"));
+print '<h5>Kommentek száma: '.$number_of_comments;'</h5>';
+while($comment_load_row=mysqli_fetch_array($comments_result)){
+  print' 
+  <div class="comment_box">
+  <p>'.$comment_sender_name_row['user_name'].'</p>
+  </div>
+  <div>
+  <p>'.$comment_load_row['comment_text'].'</p>
+  </div>';
 }
-     else{
+}
+#endregion
+#region searching
+else{
       if(isset($_GET['search'])){
         print'<h1>Search results</h1>
       <div class="gamelistdiv">';
@@ -108,7 +148,9 @@ print '
       }
       print '</div>';
       }
-      else{
+#endregion
+#region starting page of games.php      
+else{
       print'<h1>All Games List</h1>
       <div class="gamelistdiv">';
       $result2 = mysqli_query($con,"SELECT * FROM games");
@@ -132,6 +174,6 @@ print '
       }
       print '</div>';
      }}
-
+#endregion
     ?>
     
