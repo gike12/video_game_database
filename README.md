@@ -34,14 +34,14 @@
 - [x] Functionable search bar to search games in database
 - [x] Members list
 - [x] Members list admin interface
-- [ ] Members list last online and number of comments and ratings
+- [ ] Members list number of comments and ratings
 - [x] List all games from database in a styled web interface
 - [x] Adding games with admin interface
 - [x] Game ratings to each game
-- [ ] Comment section under eatch game
+- [x] Comment section under eatch game
 - [ ] Reply to comments under games
 - [ ] Make games editable within the admin interface
-- [ ] Account interface to change profile picture
+- [x] Account interface to change profile picture
 - [x] Edit, add or delete rights in the admin interface
 - [x] List upcoming games under a separate page
 - [ ] Home page look
