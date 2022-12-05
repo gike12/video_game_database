@@ -71,7 +71,7 @@
         } else {
            
             print'
-            <h1>Felhasználó módosítása</h1>
+            <h1>Felhasználói fiók módosítása</h1>
     <main class="mb-4">
     <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">

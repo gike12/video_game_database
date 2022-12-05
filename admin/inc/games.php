@@ -14,7 +14,6 @@
 
       <form id="contactForm" action="index.php?oldal=games&game_id=';print $_GET['game_id'];print '" method="POST">';?>
       
-      </form>
       <?php
       print '
       <div class="flex_game_about_conainer">
@@ -32,7 +31,7 @@
         <div class="text_content"> <p>';print $game_row["game_about"];print ' </p> </div> 
       </div>    
 ';
-      
+
      }
      else{
       print'<h1>Game List</h1>
