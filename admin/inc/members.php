@@ -150,7 +150,7 @@ if(isset($_GET['action'])){
 else{
     $result=mysqli_query($con,"SELECT * FROM users");
 print'
-<table class="centers">
+<table>
    <tr>
     <th style="padding: 9px; text-align:center;">Profilkép</th>
     <th style="padding: 9px; text-align:center;">ID</th>

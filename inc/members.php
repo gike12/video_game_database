@@ -2,7 +2,7 @@
 $result=mysqli_query($con,"SELECT * FROM users");
 
 ?>
-<table class="centers">
+<table>
    <tr>
     <th style="padding: 9px;">Profilkép</th>
     <th style="padding: 9px;">Felhasználónév</a></th>

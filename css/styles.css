@@ -104,3 +104,20 @@ img.card-img-top{
 .post_comment .comment_post{
   padding: 0 0 15px 58px;
 }
+@media only screen and (max-width: 600px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  table tbody {
+    display: table;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 601px) {
+  table{
+    display: table;
+    margin: 0 auto;
+  }
+}
