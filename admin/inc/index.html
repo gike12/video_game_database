@@ -49,14 +49,6 @@
                 ?>
                 <?php print '"  href="index.php?oldal=games">Games</a>
               </li>
-
-              <li class="nav-item">
-                <a class="nav-link ';
-                ?>
-                <?php class_setter('upcoming','notcurrent');
-                ?>
-                <?php print' " href="index.php?oldal=upcoming">Upcoming</a>
-              </li>
               <li class="nav-item">
                 <a class="nav-link ';
                 ?>
@@ -79,7 +71,7 @@
            print '<span><img src="';print'..\\';print $picturepath; print '" alt="" width="35" height="35" aria-hidden="true" style=" border-radius: 50%; margin-left: 6px"></span>';
            print' </a>
              <ul class="dropdown-menu">
-             <li><a class="dropdown-item" href="#">Account</a></li>';
+              <li></li>';
              if($login_jog > 5) print' <li><a class="dropdown-item" href="';print'../index.php?oldal=';print $oldalneve ;print'">Normál felület</a></li>'; 
              print '
              <li><hr class="dropdown-divider"></li>

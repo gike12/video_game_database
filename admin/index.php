@@ -5,10 +5,10 @@
 	include("inc/_classsetter.php");
 	
 	
-	if(isset($_SESSION['login_jog']) and $_SESSION['login_jog'] < 7)
+	if((isset($_SESSION['login_jog']) and $_SESSION['login_jog'] < 7) or !isset($_SESSION['login_jog']))
 	{
 			session_destroy();
-			ugras("index.php",1);
+			$tartalom="login.php";
 	}
 	else{
 	
@@ -25,7 +25,6 @@
 				case "jog_modosit"	:$tartalom="jog_modosit.php"; break;
 				case "members"		:$tartalom="members.php"; break;
 				case "games"		:$tartalom="games.php"; break;
-				case "upcoming"		:$tartalom="upcoming.php"; break;
 				case "game_add"		:$tartalom="game_add.php"; break;
 				default		   		: $tartalom="home.php"; break;
 				

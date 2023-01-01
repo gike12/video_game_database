@@ -53,11 +53,6 @@ if (isset($_POST['hozzaad'])) {
 <div class="page-heading">
     <h1>Játék adatbázishoz adása</h1>
 </div>
-</div>
-</div>
-</div>
-</header>
-<!-- Main Content-->
 <main class="mb-4">
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -100,7 +95,7 @@ if (isset($_POST['hozzaad'])) {
                             
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Indexkép</label>
-                                <input class="form-control" type="file" id="game_picture" name="file" type="file" placeholder="Pame_picture"
+                                <input class="form-control" type="file" id="game_picture" name="file" type="file" placeholder="Game_picture"
                                 data-sb-validations="required">
                             </div>
 

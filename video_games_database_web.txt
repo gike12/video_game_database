@@ -7,7 +7,7 @@ LOOK
   Home                                                      / Latest relased games(2~4),Latest upcoming games(2~4),Top posts from forum(2~4) / 				home.php
   Account                                                   / Profile pic, Name, Creation Date, Rights, Number of Comments, Number of Ratings | sign in or login /	account.php
 
-  forum                                                     / Categories in category's and topic in category (comments in topics, reply on comment's) /             	forum.php  
+  (forum                                                     / Categories in category's and topic in category (comments in topics, reply on comment's) /             	forum.php)
 
 
 
@@ -65,7 +65,7 @@ DATABASE
     picture_name                                            / VARCHAR
     picture_path                                            / VARCHAR
     picture_tag                                             / VARCHAR
-
+(
   -Categories
    category_id                                              / INT
    category_name                                            / VARCHAR(50)
@@ -85,3 +85,4 @@ DATABASE
    reply_topic_id                                           / INT
    reply_by ( Creator (user))                               / INT
    reply_parent ( make reply's on comments )                / INT
+)

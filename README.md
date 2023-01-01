@@ -45,10 +45,10 @@
 - [x] Edit, add or delete rights in the admin interface
 - [x] List upcoming games under a separate page
 - [ ] Home page look
-- [ ] Forum look
-- [ ] Forum Categories
-- [ ] Forum Threads
-- [ ] Reply to forum threads and reply to reply
+- [ ] Forum look (Dropped)
+- [ ] Forum Categories (Dropped)
+- [ ] Forum Threads (Dropped)
+- [ ] Reply to forum threads and reply to reply (Dropped)
 - [ ] Website is fully functional
 
 

@@ -94,7 +94,7 @@ if(isset($_SESSION['login_id'])) print '
         <input name="game_id" hidden value="'.$_GET['game_id'].'" />
         <textarea class="form-control" id="comment_text" name="comment_text" type="text" placeholder="Comment_text" style="height: 120px; resize: none; margin-bottom:5px;"></textarea>
         <label for="name">Írj megjegyzést...</label>
-<input class="btn btn-primary text-uppercase" type="submit" name="comment_kuld" value="Küldés">
+<input class="btn btn-primary text-uppercase centers" type="submit" name="comment_kuld" value="Küldés">
 </div>
 </form>';
 $comments_result=mysqli_query($con,"SELECT * FROM comments WHERE comment_game_id='$_GET[game_id]'");
@@ -102,13 +102,13 @@ $number_of_comments=0;
 if(!mysqli_num_rows($comments_result) == 0){
   $number_of_comments=mysqli_num_rows($comments_result);
 
-print '<h5>Kommentek száma: '.$number_of_comments;'</h5>';
+print '<p>Kommentek száma: '.$number_of_comments;'</p>';
 while($comment_load_row=mysqli_fetch_array($comments_result)){
   $comment_sender_row=mysqli_fetch_array(mysqli_query($con,"SELECT * FROM users WHERE id='$comment_load_row[comment_author]'"));
   $user_img_row=mysqli_fetch_array(mysqli_query($con,"SELECT * FROM pictures WHERE id='$comment_sender_row[user_profile_picture_id]'"));
   print' 
-<div class="commentbox_container" style="box-sizing: border-box;font-size: 14px;background: orange; width: min-content; border-style: outset ;" >
-<div class="comment_section">
+<div class="commentbox_container" style="box-sizing: border-box;font-size: 14px;background: orange; width: auto; border-style: outset ;" >
+<div class="comment_section" style="width: auto;">
 <div class="post_comment">
   <div class="list">
     <div class="user">
