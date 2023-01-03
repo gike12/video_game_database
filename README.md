@@ -30,25 +30,25 @@
   - reply on comment's  
 ## Todo list
 
-- [ ] Database is fully controllable from web interface
+- [x] Database is fully controllable from web interface
 - [x] Functionable search bar to search games in database
 - [x] Members list
 - [x] Members list admin interface
-- [ ] Members list number of comments and ratings
+- [x] Members list number of comments
 - [x] List all games from database in a styled web interface
 - [x] Adding games with admin interface
 - [x] Game ratings to each game
 - [x] Comment section under eatch game
 - [ ] Reply to comments under games
-- [ ] Make games editable within the admin interface
+- [x] Make games editable within the admin interface
 - [x] Account interface to change profile picture
 - [x] Edit, add or delete rights in the admin interface
 - [x] List upcoming games under a separate page
-- [ ] Home page look
-- [ ] Forum look (Dropped)
-- [ ] Forum Categories (Dropped)
-- [ ] Forum Threads (Dropped)
-- [ ] Reply to forum threads and reply to reply (Dropped)
+- [x] Home page look
+- [-] Forum look (Dropped)
+- [-] Forum Categories (Dropped)
+- [-] Forum Threads (Dropped)
+- [-] Reply to forum threads and reply to reply (Dropped)
 - [ ] Website is fully functional
 
 

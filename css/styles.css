@@ -98,7 +98,7 @@ img.card-img-top{
   table {
     display: block;
     overflow-x: auto;
-    white-space: nowrap;
+    white-space: normal;
   }
   table tbody {
     display: table;

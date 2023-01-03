@@ -1,0 +1,14 @@
+Home: A home oldalon a legújabban és legközelebben megjelentő játékok találhatóak.
+Members: Ezen a felületen minden felhasználó láthatja a többi felhasználót és néhány adatot róla.
+Games: Az összes adatbázisban lévő játékot megjeleníti. Mindegyik kártyán megjelenik a játék borítóképe, neve, megjelenési dátuma, a felhasználók értékelésének átlaga és hogy melyik platformokon jelent meg az adott játék. Minden játéknál rákattinthatunk a borítóképére és a neévre ami a játékot részletesebben mutatja be. Itt ha bevagyunk jelentkezve értékelhetjük a játékot és megjegyzést írhatunk róla (a megjegyzések nem módosíthatóak és nem törölhetőek)
+Upcoming: Szinte ugyanúgy működik mint a games oldal viszont itt csak a jövőben megjelenő játékok találhatóak.
+Search: itt a játékokra kereshetünk és ha nem taál az adott kifejezésre játékot közli a felhasználóval.
+sign_in: rákattintva bejelentkezhetünk a létrehozott fiókunkba vagy a regisztrálj linkre kattintva regisztrálhatunk egy saját profilt.
+Bejeletntkezve: Bejeletntkezve a fiókunk neve jelenik meg és a profilkép ami a nyílra kattintva az "Account details" fül alatt módosítható minden más adatunkal együtt. Vagy a Logout gombra kattintva kijelentkezhetünk felhasználónkból.
+Admin felüelt:
+Elérés: ha admin felhasználóval rendelkezünk azaz a jogszint 7 felett van akkor bejeletntkezve felhasználónknál a kis nyílra kattintva egy admin felület fül.
+Members: Az admin felületen a memebers menüpont alatt az összes felhasználó összes adatát láthatjuk és módosíthatjuk / törölhetjük.
+Games: Itt az összes játékot látjuk és valamelyik játékra kattintva módosíthatjuk a játék adatait (A képmódosítást nem bírtam megoldni valamiért) vagy törölhetjük az adatbázisból. Valamint hozzáadhatunk játékot a "New game" kártyára kattintva
+Jogosultságok: Itt jogosultságokat adhatunk vagy törölhetünk és jogszinteket módosíthatunk.
+
+A forumba már nem kezdtem bele hiszen túl sok ideig tartott volna és az ünnepek miatt már nem volt időm belekezdeni sem.

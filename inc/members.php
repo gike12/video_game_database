@@ -1,5 +1,5 @@
 <?php 
-$result=mysqli_query($con,"SELECT * FROM users");
+$result=mysqli_query($con,"SELECT * FROM users ORDER BY user_name asc");
 
 ?>
 <table>

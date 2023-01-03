@@ -8,8 +8,13 @@
       $gamepicture= mysqli_fetch_assoc(mysqli_query($con,"SELECT * FROM pictures WHERE id='$game_row[game_picture_id]'"));
       print'
 
-      <form id="contactForm" action="index.php?oldal=games&game_id=';print $_GET['game_id'].'" method="POST">';?>
+    ';?>
       <?php
+if (isset($_POST['torol_game'])) {
+    $game_id_value=$_POST['game_id_value'];
+    mysqli_query($con,"DELETE FROM games WHERE id='$game_id_value'");
+    echo "<h1> Játék adatai törölve! </h1>";
+}
 if (isset($_POST['frissit'])) {
     $game_name=str_replace("'",'`',$_POST['game_name']);
     $game_genre=$_POST['game_genre'];
@@ -82,7 +87,9 @@ else{ echo "<h1> Nem töltötted ki valamelyik beviteli mezőt! </h1>"; return f
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <div class="my-5">
                 <img class="game_img_size" src='..\<?php print $gamepicture["picture_path"]?>'></img>
+
                     <form id="contactForm" action="index.php?oldal=games&game_id=<?php print $_GET['game_id']?>" method="POST" enctype="multipart/form-data">
+                    <input class="btn btn-danger text-uppercase centers" type="submit" name="torol_game" value="Törlés">
                         <div class="form-floating">
                         <input class="form-control" hidden id="game_id_value" name="game_id_value" type="text" placeholder="game_id_value"
                                     data-sb-validations="required" value='<?php print  $_GET['game_id']?>' readonly/>
@@ -127,7 +134,7 @@ else{ echo "<h1> Nem töltötted ki valamelyik beviteli mezőt! </h1>"; return f
                                 <input class="form-control" type="file" id="file" name="file" type="file" placeholder="Game_picture">
                             </div>
 
-                        <input class="btn btn-primary text-uppercase centers" type="submit" name="frissit" value="Hozzáad">
+                        <input class="btn btn-primary text-uppercase centers" type="submit" name="frissit" value="Frissít">
 
                     </form>
                 </div>

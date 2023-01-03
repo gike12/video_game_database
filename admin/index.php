@@ -16,7 +16,6 @@
 	{
 		
 				switch($_GET['oldal']){
-				case "home"    		:$tartalom="home.php"; break;
 				case "login"		:$tartalom="login.php"; break;
 				case "logout"		:$tartalom="logout.php"; break;
 				case "jogosultsagok":$tartalom="jogosultsagok.php"; break;

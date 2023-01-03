@@ -70,7 +70,7 @@ if(isset($_GET['game_id'])){
 print '
 <div class="flex_game_about_conainer">
       
-      <div class="game_infos"> 
+      <div class="game_infos centers"> 
         <p>Genre: ';print $game_row["game_genre"];print ' </p>
         <p>Relase date: ';print $game_row["game_relase_date"];print ' </p> 
         <p>Platforms: ';print $game_row["game_platforms"];print ' </p> 
@@ -168,7 +168,7 @@ else{
 else{
       print'<h1>All Games List</h1>
       <div class="gamelistdiv">';
-      $result2 = mysqli_query($con,"SELECT * FROM games");
+      $result2 = mysqli_query($con,"SELECT * FROM games ORDER BY game_name ASC");
       while($row2=mysqli_fetch_assoc($result2)){
         
         $g_img = mysqli_query($con,"SELECT * FROM pictures WHERE id='$row2[game_picture_id]'");
