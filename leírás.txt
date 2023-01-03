@@ -12,3 +12,4 @@ Games: Itt az összes játékot látjuk és valamelyik játékra kattintva módo
 Jogosultságok: Itt jogosultságokat adhatunk vagy törölhetünk és jogszinteket módosíthatunk.
 
 A forumba már nem kezdtem bele hiszen túl sok ideig tartott volna és az ünnepek miatt már nem volt időm belekezdeni sem.
+A projektet feltöltöttem githubra hogy követni tudjam a haladásomat : https://github.com/gike12/video_game_database
